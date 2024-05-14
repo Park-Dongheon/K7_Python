@@ -1,4 +1,4 @@
-from pizza import *
+from newPizza import *
 
 
 make_pizza(16, 'pepperoni')

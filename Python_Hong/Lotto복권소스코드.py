@@ -27,17 +27,8 @@ def generate_lotto_numbers():
     
     return lotto_numbers, bonus_number                  # set타입과, list 타입을 반환
 
-# 당첨 번호 생성
-# generate_lotto_numbers() 호출하여 set타입, list타입 반환 받아서 winning_numbers, winning_bonus_number 변수에 저장
-winning_numbers, winning_bonus_number = generate_lotto_numbers()
-print("당첨 번호:", winning_numbers, "보너스 번호:", winning_bonus_number)
-
-# 함수로 구현!!
-# 100장의 로또 번호 생성하여 당첨 여부 판별
-for idx in range(1, 101):
-    lotto_numbers, lotto_bonus_number = generate_lotto_numbers()
-    
-    # 로또 번호와 보너스 번호가 당첨 번호와 일치하는지 확인
+def check_winner(lotto_numbers, lotto_bonus_number, winning_numbers, winning_bonus_number):
+        # 로또 번호와 보너스 번호가 당첨 번호와 일치하는지 확인
     if lotto_numbers == winning_numbers and lotto_bonus_number == winning_bonus_number:
         print(f"{idx}번째 로또 복권: 1등 당첨!")
     elif lotto_numbers == winning_numbers:
@@ -50,3 +41,29 @@ for idx in range(1, 101):
         print(f"{idx}번째 로또 복권: 5등 당첨! (4개 일치)")
     else:
         print(f"{idx}번째 로또 복권: 꽝")
+
+# 당첨 번호 생성
+# generate_lotto_numbers() 호출하여 set타입, list타입 반환 받아서 winning_numbers, winning_bonus_number 변수에 저장
+winning_numbers, winning_bonus_number = generate_lotto_numbers()
+print("당첨 번호:", winning_numbers, "보너스 번호:", winning_bonus_number)
+
+### 빈 로또 리스트 100장 
+lotto_list=[]
+
+### 100장의 로또 번호 생성하여 당첨 여부 판별
+for idx in range(1, 101):
+    # lotto_numbers 6개 숫자 - 튜플, lotto_bonus_number 1개 - 튜플
+    lotto_numbers, lotto_bonus_number = generate_lotto_numbers()    # 복권 1장 생성하여
+    ## (복권번호, 보너스 번호) 튜플로 저장
+    ## [(0,0), (0,0), (0,0)...]등으로 100장 복권을 저장
+    lotto_list.append((lotto_numbers, lotto_bonus_number))
+    ## 로또 100장 출력
+    print(lotto_list)
+
+
+for a,b in lotto_list:
+    lotto_numbers = a
+    lotto_bonus_number = b
+    ### 함수로 구현!!
+    ### 100장 복권을 가져와 당첨번호와 비교   
+    check_winner(lotto_numbers, lotto_bonus_number, winning_numbers, winning_bonus_number)

@@ -1,8 +1,6 @@
-def make_pizza(size, *toppings):
-    """Summarize the pizza we are about to make."""
-    print(f"\nMaking a {size}-inch pizza with the following toppings:")
-    for topping in toppings:
-        print(f"- {topping}")
+# import newPizza
+# from newPizza import make_pizza as mp
+import newPizza as p
 
-make_pizza(16, 'pepperoni')
-make_pizza(12, 'mushrooms', 'green peppers', 'extra cheese')
+p.make_pizza(16, 'pepperoni')
+p.make_pizza(12, 'mushroom', 'green peppers', 'extra cheese')

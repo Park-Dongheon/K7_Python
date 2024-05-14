@@ -1,4 +1,4 @@
-from pizza import make_pizza as mp
+from newPizza import make_pizza as mp
 
 
 mp(16, 'pepperoni')

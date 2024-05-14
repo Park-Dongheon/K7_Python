@@ -11,8 +11,9 @@ for _ in range(20):
 
 # 저장된 리스트 출력
 print(f"난수 생성 = {random_numbers}")
-# s 다음에 숫자를 가진 변수들을 생성하여 리스트에 저장하는 예제
 
+
+# s 다음에 숫자를 가진 변수들을 생성하여 리스트에 저장하는 예제
 
 # 빈 리스트 생성
 string_list = [] #s1, s2, s3
@@ -24,29 +25,36 @@ for n in range(3):
         s.append(i)
     string_list.append(s)
 
+
+
 # 저장된 리스트 출력
 print(f"sno 리스트 = {string_list}")
 
 
-students = string_list
-# print(students, type(students))
-scores = random_numbers
-# print(scores, type(scores))
-# students, scores로 구성된 딕셔너리를 만든다
-score_dic = {}
-for i in range(len(students)):
-    for item in students[i]:
-        score_dic[item] = scores
-print(score_dic.keys(), score_dic.values())
+students = string_list     # students=key
+scores = random_numbers     # scores=value
+# print( type(students), type(scores) )
 
-print(f"학번과 점수 딕셔너리={score_dic}")
+# students, scores로 구성된 딕셔너리를 만든다
+score_dic = dict( zip(map(tuple,students), scores) )
+
+print(score_dic)
+
+
+
+# for i in range(len(students)):
+#     for item in students[i]:
+#         score_dic[item] = scores
+# print(score_dic.keys(), score_dic.values())
+
+# print(f"학번과 점수 딕셔너리={score_dic}")
 # 점수를 기준으로 내림차순으로 정렬한 튜플 리스트 생성, 딕셔너리 정렬, <--- 람다식 사용
                 # sorted_scores = sorted()
 
 # 정렬된 튜플 리스트를 다른 딕셔너리에 저장
                 # sorted_score_dic = {}
 
-# 결과 출력
+# 결과 출력 
                 # print(f"점수로 정렬된 딕셔너리= {sorted_score_dic}")
 # 정렬된 튜플 리스트에서 상위 5개 추출하여 리스트로 저장
 # 상위 5개 추출하여 딕셔너리로 저장

@@ -52,13 +52,13 @@ def greet_users(names):                                        # 리스트의 �
 usernames = ['hannah', 'ty', 'margot']                         # 리스트 형태 인자 전달
 greet_users(usernames)
 
-def print_models(unprinted_designs, completed_models):
+def print_models(unprinted_designs, completed_models):         # 함수의 parameter의 type을 알 수 없음
     """
     Simulate printing each design, until none are left.
     Move each design to completed_models after printing.
     """
-    while unprinted_designs:
-        current_design = unprinted_designs.pop()
+    while unprinted_designs:                                   # list가 empty가 아니면 true
+        current_design = unprinted_designs.pop()               # list의 마지막 요소를 하나씩 out
         print(f"Printing model: {current_design}")
         completed_models.append(current_design)
 def show_completed_models(completed_models):
@@ -66,9 +66,36 @@ def show_completed_models(completed_models):
     print("\nThe following models have been printed:")
     for completed_model in completed_models:
         print(completed_model)
+### main 프로그램부터 봐야 한다
 unprinted_designs = ['phone case', 'robot pendant', 'dodecahedron']
 completed_models = []
-print_models(unprinted_designs, completed_models)
+# print_models(unprinted_designs, completed_models)
+# print(f'원래 변수 출력 = {unprinted_designs}')
+# print(f'수정 여부 출력 = {completed_models}')                    # 함수 print_models에 의해 수정
+# show_completed_models(completed_models)
+
+print_models(unprinted_designs[:], completed_models)            # [:]사본을 만들어 함수에 전달 
 print(f'원래 변수 출력 = {unprinted_designs}')
 print(f'수정 여부 출력 = {completed_models}')
 show_completed_models(completed_models)
+
+# *toppings 변수는 임의의 갯수 parameter => tuple에 모음
+def make_pizza(size, *toppings):
+    """Summarize the pizza we are about to make."""
+    print(f"\nMaking a {size}-inch pizza with the following toppings:")
+    for t in toppings:                # t는 각각의 toppings의 튜플
+        print(f"- {t}")
+make_pizza(16, 'pepperoni')
+make_pizza(12, 'mushrooms', 'green peppers', 'extra cheese')
+
+def build_profile(first, last, **user_info):         # **를 사용하면 dictionary
+    """Build a dictionary containing everything we know about a user."""
+    # user_info 딕셔너리에 key:value 두 개(first_name, last_name) 추가
+    user_info['first_name'] = first
+    user_info['last_name'] = last
+    return user_info
+user_profile = build_profile('albert', 'einstein',# build_profile() 함수는 딕셔너리를 반환
+                             location='princeton',# 3번째 argument부터 key=value로 전달
+                             field='physics')
+print(user_profile)
+

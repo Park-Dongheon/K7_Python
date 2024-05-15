@@ -71,9 +71,9 @@ def make_shirt(shirt_msg, shirt_size='Large', shirt_sie='Midium'):
 make_shirt('I love Python')
 
 # 8-5 도시
-def describe_city(contry_name, city_name="레이캬비크"):
-    print(f"\n{city_name}는 {contry_name}에 있습니다.")
+def describe_city(country_name, city_name="레이캬비크"):
+    print(f"\n{city_name}는 {country_name}에 있습니다.")
 
 describe_city('South Korea',city_name='Seoul')
-describe_city(contry_name='Japan',city_name='Tokyo')
+describe_city(country_name='Japan',city_name='Tokyo')
 describe_city('Iceland')

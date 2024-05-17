@@ -1,6 +1,5 @@
+# 공 넣기
 """
-공 넣기
-
 문제
 도현이는 바구니를 총 N개 가지고 있고, 각각의 바구니에는 1번부터 N번까지 번호가 매겨져 있다. 또, 1번부터 N번까지 번호가 적혀있는 공을 매우 많이 가지고 있다. 가장 처음 바구니에는 공이 들어있지 않으며, 바구니에는 공을 1개만 넣을 수 있다.
 
@@ -28,3 +27,13 @@
 예제 출력 1 
 1 2 1 1 0
 """
+
+n, m = list(map(int, input().split()))
+baguni = [0] * n
+for _ in range(m):
+    i, j, k = list(map(int, input().split()))
+    for idx in range(i, j+1):
+        baguni[idx] = k
+
+print(" ".join(map(str,baguni)))
+

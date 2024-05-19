@@ -28,9 +28,9 @@ The last character is a blank
 6
 """
 
-string = str(input())
+# 1
+words = input().split()
+print(len(words))
 
-for i in string:
-    for j in range(string):
-        if i.isupper():
-            i.lower()
+# 2
+print(len(input().split()))

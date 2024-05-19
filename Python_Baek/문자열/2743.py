@@ -17,6 +17,9 @@ pulljima
 8
 """
 
-# str() -- 문자열 변환
+# 1
+print(len(input()))
+
+# 2. str() -- 문자열 변환
 word = str(input())
 print(len(word))

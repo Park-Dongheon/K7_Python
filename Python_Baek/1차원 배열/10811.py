@@ -27,3 +27,28 @@
 예제 출력 1 
 3 4 1 2 5
 """
+
+# 리스트 슬라이싱을 이용한 역순
+n, m = list(map(int, input().split()))
+baguni = list(range(1, n+1))
+
+for _ in range(m):
+    i, j = list(map(int, input().split()))
+    # 리스트에서 원하는 구간만 역순
+    baguni[i-1:j] = baguni[i-1:j][::-1]
+
+print(" ".join(map(str, baguni)))
+
+# 일반적인 경우
+n, m = map(int, input().split())
+basket = [i for i in range(1, n+1)]
+temp = 0
+
+for _ in range(m):
+  i, j = map(int, input().split())
+  temp = basket[i-1:j]
+  temp.reverse()
+  basket[i-1:j] = temp
+
+for idx in range(n):
+  print(basket[idx], end=" ")

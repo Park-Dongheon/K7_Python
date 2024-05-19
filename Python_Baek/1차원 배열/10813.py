@@ -27,3 +27,28 @@
 예제 출력 1 
 3 1 4 2 5
 """
+
+# 공:type(list), 두 요소 바꾸기
+
+# 변수의 값을 교환 (Python Style)
+n, m = list(map(int, input().split()))
+baguni = list(range(1, n+1))
+# baguni = [i for i in range(1, n+1)]       # 리스트 컴프리헨션 이용
+
+for _ in range(m):
+    i, j = list(map(int, input().split()))
+    baguni[i-1], baguni[j-1] = baguni[j-1], baguni[i-1]
+
+print(" ".join(map(str,baguni)))
+
+# 임시 변수 사용
+# n, m = list(map(int, input().split()))
+# baguni = list(range(1, n+1))
+
+# for _ in range(m):
+#     i, j = list(map(int, input().split()))
+#     temp = baguni[i-1]
+#     baguni[i-1] = baguni[j-1]
+#     baguni[j-1] = temp
+
+# print(" ".join(map(str,baguni)))

@@ -31,3 +31,53 @@ UNUCIC
 예제 출력 2 
 36
 """
+
+word = list(map(str, input().upper()))
+time_sum = 0
+
+for ch in word:
+    num = 1
+    time = 2
+    if(ch == 'A' or ch == 'B' or ch == 'C'):
+        num = 2
+        time += 1
+    elif(ch == 'D' or ch == 'E' or ch == 'F'):
+        num = 3
+        time += 2
+    elif(ch == 'G' or ch == 'H' or ch == 'I'):
+        num = 4
+        time += 3
+    elif(ch == 'J' or ch == 'K' or ch == 'L'):
+        num = 5
+        time += 4
+    elif(ch == 'M' or ch == 'N' or ch == 'O'):
+        num = 6
+        time += 5
+    elif(ch == 'P' or ch == 'Q' or ch == 'R' or ch == 'S'):
+        num = 7
+        time += 6
+    elif(ch == 'T' or ch == 'U' or ch == 'V'):
+        num = 8
+        time += 7
+    elif(ch == 'W' or ch == 'X' or ch == 'Y' or ch == 'Z'):
+        num = 9
+        time += 8
+    else:
+        num = 0
+        time += 9
+    time_sum += time
+
+print(time_sum)
+
+# 일반적인 경우
+dial = ['ABC', 'DEF', 'GHI', 'JKL', 'MNO', 'PQRS', 'TUV', 'WXYZ']
+alpha = list(input())		# 알파벳 단어 입력
+result = 0
+
+for i in alpha:
+    for j in dial:
+        if i in str(j):		# str(j) = 'A', 'B', 'C', •••
+            num = dial.index(j) + 3		# 각 알파벳 별 필요한 시간
+            result += num
+
+print(result)

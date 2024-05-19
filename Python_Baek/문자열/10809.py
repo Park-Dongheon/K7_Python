@@ -28,18 +28,20 @@ for i in c:
     else:
         print(-1, end=' ')
 
+
 # find()--어떤 찾는 문자가 문자열 안에서 첫 번째에 위치한 순서를 숫자로 출력, 만일 찾는 문자가 문자열 안에 없는 경우에는 -1을 출력하는 함수
 s = input()
 
-for x in 'abcdefghijklmnopqrstuvwxyz':
-    print(s.find(x), end = ' ')
+for ch in 'abcdefghijklmnopqrstuvwxyz`':
+    print(s.find(ch), end = ' ')
+
 
 # str(), enumerate(), join()
-s = str(input())
-list = [-1] * 26
-for idx, char in enumerate(s):
-    pos = ord(char) - ord('a')
-    if list[pos] == -1:
-        list[pos] = idx
+# s = str(input())
+# list = [-1] * 26
+# for idx, char in enumerate(s):
+#     pos = ord(char) - ord('a')
+#     if list[pos] == -1:
+#         list[pos] = idx
 
-print(" ".join(map(str, list)))
+# print(" ".join(map(str, list)))

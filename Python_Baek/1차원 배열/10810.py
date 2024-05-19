@@ -29,11 +29,25 @@
 """
 
 n, m = list(map(int, input().split()))
+# N개의 바구니를 0으로 초기화, 각 바구니에 처음에는 공이 없음
 baguni = [0] * n
 for _ in range(m):
     i, j, k = list(map(int, input().split()))
+    # i번 바구니부터 j번 바구니까지 k번 공을 넣음
     for idx in range(i, j+1):
-        baguni[idx] = k
+        baguni[idx-1] = k
 
+# 각 바구니에 들어 있는 공의 번호를 출력
 print(" ".join(map(str,baguni)))
 
+# 일반적인 코드
+# n,m = map(int, input().split())
+# basket = [0] * n
+
+# for _ in range(m):
+#   i, j, k = map(int, input().split())
+#   for idx in range(i, j+1):
+#     basket[idx - 1] = k
+
+# for idx in range(n):
+#   print(basket[idx], end=" ")

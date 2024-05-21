@@ -1,7 +1,7 @@
 from pathlib import Path
 
 
-path = Path('alice.txt')
+path = Path('alice2.txt')
 try:
     contents = path.read_text(encoding='utf-8')
 except FileNotFoundError:

@@ -15,6 +15,6 @@ def count_words(path):
 
 filenames = ['alice.txt', 'siddhartha.txt', 'moby_dick.txt',
         'little_women.txt']
-for filename in filenames:
+for filename in filenames:      # 파일들의 경로를 구분
     path = Path(filename)
     count_words(path)

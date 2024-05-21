@@ -1,0 +1,5 @@
+Hello, World!
+This is a new line.
+path 객체를 사용한 추가 쓰기
+Adding a new line.
+Appending another line.

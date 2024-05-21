@@ -27,8 +27,38 @@ baekjoon
 """
 
 pel = input()
-
+string_l1 = []
+string_l2 = []
 for ch in pel:
-    
+    string_l1.append(ch)
 for ch in reversed(pel):
-    
+    string_l2.append(ch)
+if(string_l1 == string_l2):
+    is_pel = 1
+else:
+    is_pel = 0
+
+print(is_pel)
+
+
+# 파이썬 style
+word = list(str(input()))
+
+if list(reversed(word)) == word:
+    print(1)
+else:
+    print(0)
+
+
+# 리스트 슬라이싱 사용
+word = list(input())
+
+if word == word[::-1]:
+    print(1)
+else :
+    print(0)
+
+
+# 리스트 컴프리헨션
+word = input()
+print(1 if word == word[::-1] else 0)

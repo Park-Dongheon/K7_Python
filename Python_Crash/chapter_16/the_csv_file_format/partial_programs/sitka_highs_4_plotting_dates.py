@@ -5,10 +5,12 @@ from datetime import datetime
 import matplotlib.pyplot as plt
 
 
-path = Path('weather_data/sitka_weather_07-2021_simple.csv')
+path = Path('the_csv_file_format/weather_data/sitka_weather_07-2021_simple.csv')
 lines = path.read_text().splitlines()
 
-reader = csv.reader(lines)
+# lines변수는 리스트
+reader = csv.reader(lines)  # reader도 리스트로 간주 : 차이 -- next
+## reader는 객체다 - 리스트를 갖고 있다 + 커서 개념을 갖고 있다
 header_row = next(reader)
 
 # Extract dates and high temperatures.

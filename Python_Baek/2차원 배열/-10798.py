@@ -53,6 +53,6 @@ Aa0aPAf985Bz1EhCz2W3D1gkD6x
 words = [list(map(str, input())) 
          for _ in range(5)]
 
-dic = {}
+lst = []
 for idx, word in enumerate(words):
-    dic = {idx:word}
+    lst = 

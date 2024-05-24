@@ -39,14 +39,13 @@
 5 7
 """
 
-import random
-
-n, m = list(map(int, input().split()))
 matrix = []
- 
-for i in range(n):
-    for j in range(m):
-        matrix.append(random.randint(1, 99))
+
+for _ in range(9):
+    n = input()
+    for _ in range(9):
+        m = input()
 
 print(matrix)
+ 
 

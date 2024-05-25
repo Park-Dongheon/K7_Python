@@ -53,6 +53,11 @@ Aa0aPAf985Bz1EhCz2W3D1gkD6x
 words = [list(map(str, input())) 
          for _ in range(5)]
 
-lst = []
-for idx, word in enumerate(words):
-    lst = 
+# 모든 행의 길이 중 최대 길이를 구함
+max_length = max(len(row) for row in words)
+
+# 행과 열의 인덱스가 바뀐 리스트 생성
+lst = [ (col_idx, row[col_idx]) for col_idx in range(max_length) for row in words if col_idx < len(row)]
+
+for item in lst:
+    print(item[1], end='')

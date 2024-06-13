@@ -1,3 +1,4 @@
+# 곱셈
 """
 문제
 (세 자리 수) × (세 자리 수)는 다음과 같은 과정을 통하여 이루어진다.
@@ -33,6 +34,7 @@ b = input()
 s = 0
 
 for idx, n in enumerate(b[::-1]):
-    s = a * int(n)
-    s += s * (10**idx)
+    mul = a * int(n)
+    print(mul)
+    s += a * int(n) * (10**idx)
 print(s)
